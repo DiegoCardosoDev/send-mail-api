@@ -1,6 +1,7 @@
 package com.diego.mailsender.model;
 
 
+import com.diego.mailsender.enums.StatusEmail;
 import lombok.Data;
 
 import javax.persistence.*;
