@@ -26,7 +26,6 @@ public class EmailService {
 
         emailModel.setSendDataEmail(LocalDateTime.now());
         try {
-
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(emailModel.getEmailFrom());
             message.setTo(emailModel.getEmailTo());
