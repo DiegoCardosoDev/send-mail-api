@@ -13,7 +13,6 @@ import javax.validation.Valid;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping
 public class EmailController {
 
     private EmailService emailService;
