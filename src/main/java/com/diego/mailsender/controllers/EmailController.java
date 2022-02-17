@@ -24,12 +24,19 @@ public class EmailController {
 
        try {
            EmailModel emailModel = new EmailModel();
+
+           log.info("criando email");
            BeanUtils.copyProperties(emailDTO, emailModel);
            emailService.sendEmail(emailModel);
-           return new ResponseEntity<>("{\"mensagem\": \"email enviado com sucesso\"}", HttpStatus.OK);
+           return new ResponseEntity<>("{ \"mensagem\": \"email criado: \"}"   + "\n" +
+                   "De:"+ emailModel.getEmailFrom() + "\n" +
+                   "Para:"+ emailModel.getEmailTo() + "\n" +
+                   "Data:"+ emailModel.getSendDataEmail() + "\n" +
+                   "Status:"+ emailModel.getStatusEmail()
+                   , HttpStatus.OK);
 
        }catch (Exception ex){
-           log.error("erro ao processar arquivo", ex);
+           log.error("erro ao criar email", ex);
            return new ResponseEntity<>("{ \"mensagem\": \"falha ao enviar email \"}",
                    HttpStatus.INTERNAL_SERVER_ERROR);
 

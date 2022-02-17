@@ -38,7 +38,6 @@ public class EmailService {
 
         }catch (MailException exception){
             log.error("erro ao enviar  email");
-            exception.printStackTrace();
             emailModel.setStatusEmail(StatusEmail.ERROR);
 
         }finally {
