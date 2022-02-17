@@ -23,6 +23,7 @@ public class EmailService {
     private JavaMailSender emailSender;
 
     public EmailModel sendEmail(EmailModel emailModel) {
+
         emailModel.setSendDataEmail(LocalDateTime.now());
         try {
 
@@ -37,6 +38,7 @@ public class EmailService {
 
         }catch (MailException exception){
             log.error("erro ao enviar  email");
+            exception.printStackTrace();
             emailModel.setStatusEmail(StatusEmail.ERROR);
 
         }finally {

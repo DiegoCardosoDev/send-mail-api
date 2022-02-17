@@ -25,6 +25,7 @@ public class EmailModel {
 
     private LocalDateTime sendDataEmail;
 
+    @Enumerated(EnumType.STRING)
     private StatusEmail statusEmail;
 
 
